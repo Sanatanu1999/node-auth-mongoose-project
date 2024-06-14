@@ -1,0 +1,63 @@
+<%- include('../includes/header.ejs')%>
+  </head>
+
+  <body>
+    <%- include('../includes/navbar.ejs')%>
+      <main>
+        <form action="/authPost" method="POST" enctype="multipart/form-data">
+          <label for="fname">First Name:</label>
+          <input type="text" name="fname" id="fname" required><br><br>
+
+          <label for="lname">Last Name:</label>
+          <input type="text" name="lname" id="lname" required><br><br>
+
+          <p>Gender:</p>
+          <input type="radio" id="gen" name="gen" value="Male" required>
+          <label for="gen">Male</label><br>
+          <input type="radio" id="gen" name="gen" value="Female" required>
+          <label for="gen">Female</label><br>
+          <input type="radio" id="gen" name="gen" value="Other" required>
+          <label for="gen">Other</label><br><br>
+
+          <label for="cit">City:</label>
+          <select name="cit" id="cit" required>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Ranghat">Ranaghat</option>
+            <option value="Chakdaha">Chakdaha</option>
+            <option value="Belgharia">Belgharia</option>
+          </select>
+          <br><br>
+
+          <label for="pin">Pincode:</label>
+          <input type="text" id="pin" name="pin" maxlength="4" required><br><br>
+
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" required><br><br>
+
+          <div class="col-sm-6 form-group">
+            <label for="pass">Password</label>
+            <input type="password" name="password" class="form-control" id="pass" placeholder="Enter your password."
+              required>
+          </div>
+          <div class="col-sm-6 form-group">
+            <label for="pass2">Confirm Password</label>
+            <input type="password" name="cnf_password" class="form-control" id="pass2"
+              placeholder="Re-enter your password." required>
+          </div>
+
+
+          <div class="col-sm-4 form-group">
+            <label for="userimage">User Image</label>
+            <input type="file" name="userimage" class="form-control" id="userimage" placeholder="Choose Your Image.">
+          </div>
+          <div class="col-sm-4 form-group">
+            <label for="idProof">Identity Proof</label>
+            <input type="file" name="idProof" class="form-control" id="idProof" placeholder="Choose Your Image.">
+          </div>
+
+          <input type="reset" value="Reset">
+          <input type="submit" value="Submit">
+        </form>
+      </main>
+
+      <%- include('../includes/footer.ejs')%>

@@ -1,0 +1,18 @@
+<%-include('../includes/header.ejs') %>
+</head>
+<body>
+    <%-include('../includes/navbar.ejs') %>
+    <form  method="POST" action="/postData" enctype="multipart/form-data">
+    <label for="pname">Product name:</label>
+    <input type="text" name="pname" id="pname"><br><br>
+    <label for="pprice">Product price:</label>
+    <input type="text" name="pprice" id="price"><br><br>
+    <label for="pcolor">Product company:</label>
+    <input type="text" name="pcompany" id="pcolor"><br><br>
+    <!-- <label for="product_image" class="form_label">Product Image</label>
+    <input type="file" class="form_control" id="product_image" name="product_image"><br><br> -->
+    <label for="product_image" class="form_label">Product Image</label>
+    <input type="file" class="form_control" id="product_image" name="product_image" multiple><br><br>
+    <input type="submit" value="Add Product">
+    </form> 
+      

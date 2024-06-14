@@ -1,0 +1,18 @@
+<%-include('../includes/header.ejs') %>
+</head>
+<body>
+    <%-include('../includes/navbar.ejs') %>
+    <form  method="POST" action="/editpost" enctype="multipart/form-data">
+    <input type="hidden" name="pid" id="pid" value="<%=data._id%>">   
+    <label for="pname">Product name:</label>
+    <input type="text" name="pname" id="pname" value="<%=data.product_name%>"><br><br>
+    <label for="pprice">Product price:</label>
+    <input type="text" name="ppreic" id="price" value="<%=data.product_price%>"><br><br>
+    <label for="pcolor">Product company:</label>
+    <input type="text" name="pcompany" id="pcolor" value="<%=data.product_company%>"><br><br>
+    <label for="product_image" class="form_label">Product Image</label>
+    <input type="file" class="form_control" id="product_image" name="product_image" multiple><br><br>
+    <div><img src="/<%=data.product_image[0]%>" alt="image" height="100"><img src="/<%=data.product_image[1]%>" alt="image" height="100"></div>
+    <input type="submit" value="Edit">
+    </form> 
+      

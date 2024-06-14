@@ -1,0 +1,75 @@
+<%- include('../Includes/header.ejs') %>
+ <!-- <link rel="stylesheet" href="/CSS/adminViewProd.css"> -->
+</head>
+
+<body>
+
+ <%-include('../Includes/navbar.ejs')%>
+
+<main>
+    <!-- <section class ="viewForm">
+        <div class ="container py-5">
+            <h2 class ="text-center text-light">All Products For Admin</h2>
+            <%if(data.length>0){%>
+                <div class="row bg-info py-2 text-center">
+                    <div class="col"><b>Product Name</b></div>
+                    <div class="col"><b>Product Price</b></div>
+                    <div class="col"><b>Product colour</b></div>
+                    <div class="col"><b>Delete</b></div>
+                    <div class="col"><b>Edit</b></div>
+                </div>
+                <%for(let obj of data){%>
+                    <div class="row text-light text-center my-2">
+                        <div class="col"><%=obj.Product_Name%></div>
+                        <div class="col"><%=obj.Product_Price%></div>
+                        <div class="col"><%=obj.Product_Color%></div>
+                        <div class="col">
+                            <a href=""  class="btn btn-danger"></i>Delete</a>
+                        </div>
+                        <div class="col">
+                            <a href="" class="btn btn-danger">Edit</a>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+            <%}else{%>
+                <h2>Content not found</h2>
+            <%}%>
+        
+    </section> -->
+    <table class="table table-bordered ">
+        <thead>
+          <tr>
+            <th scope="col">Product Name</th>
+            <th scope="col">Product Price</th>
+            <th scope="col">Product Color</th>
+            <th scope="col">Product Image</th>
+            <th scope="col">Product Delete</th>
+            <th scope="col">Product Edit</th>
+            <!-- <th scope="col">Product Description</th> -->
+          </tr>
+        </thead>
+        <tbody>
+            <%for(let obj of data){%>
+          <tr>
+            <!-- <th scope="row">1</th> -->
+            <td><%=obj.product_name%></td>
+            <td><%=obj.product_price%></td>
+            <td><%=obj.product_company%></td>
+            <td><img src="/<%=obj.product_image[0]%>" alt="image" height="100"><img src="/<%=obj.product_image[1]%>" alt="image" height="100"></td>
+            <!-- <td><%=obj.product_delete%></td> -->
+            <td><a href="/admin/deleteProduct/<%=obj._id%>" class="btn btn-danger"></i>Delete</a></td>
+            <td><a href="/admin/viewEditPage/<%=obj._id%>" class="btn btn-danger"></i>Edit</a></td>
+        
+            <!-- <td><%=obj.product_name%></td> -->
+          </tr>
+        <%}%>
+
+        </tbody>
+      </table>
+</main>
+
+
+
+<%- include('../Includes/footer.ejs') %>
+

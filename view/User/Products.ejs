@@ -1,0 +1,34 @@
+<%- include('../Includes/header.ejs')%>
+<body>
+
+    <%- include('../Includes/navbar.ejs')%>
+    <main>
+        <section class="viewProduct">
+           <div class="container py-5">
+            <h2 class="text-center mb-4 text-dark">All Products</h2>
+            <%if(data.length>0){%>
+            <div class="row">
+                <%for(let obj of data){%>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h4 class="card-title"><%=obj.product_name%></h4>
+        
+                        </div>
+        
+                    </div>
+
+                </div>
+                <%}%>
+                <%}else{%>
+                    <p>Data Not Found</p>
+                    <%}%>
+
+            </div>
+
+           </div>
+
+        </section>
+    </main>
+
+<%- include('../Includes/footer.ejs')%>

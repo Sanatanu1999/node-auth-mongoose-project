@@ -1,0 +1,33 @@
+<%- include('../includes/header.ejs')%>
+  </head>
+
+  <body>
+    <%- include('../includes/navbar.ejs')%>
+      <main>
+        <form action="/loginPost" method="POST">
+
+          <div>
+            <% if(errorData){%>
+                <h5>
+                  <%= errorData%>
+                </h5>
+            <%}%>
+          </div>
+
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email"><br><br>
+
+          <div class="col-sm-6 form-group">
+            <label for="pass">Password</label>
+            <input type="password" name="password" class="form-control" id="pass" placeholder="Enter your password."
+              >
+          </div>
+
+          <div class="container">
+            <a href="/auth/forget_login">Forget Password</a>
+          </div>
+          <input type="submit" value="Submit">
+        </form>
+      </main>
+
+      <%- include('../includes/footer.ejs')%>
